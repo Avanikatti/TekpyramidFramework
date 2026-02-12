@@ -3,8 +3,8 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name=".PriorityTest"/>
-      <class name=".InvocationCountThreadPlSzEnable"/>
+      <class name="github.PriorityTest"/>
+      <class name="github.InvocationCountThreadPlSzEnable"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

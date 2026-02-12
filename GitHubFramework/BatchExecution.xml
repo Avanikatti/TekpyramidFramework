@@ -3,9 +3,9 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name=".PriorityTest"/>
-      <class name=".BaseClassImplentationTest"/>
-      <class name=".InvocationCountThreadPlSzEnable"/>
+      <class name="github.PriorityTest"/>
+      <class name="github.BaseClassImplentationTest"/>
+      <class name="github.InvocationCountThreadPlSzEnable"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

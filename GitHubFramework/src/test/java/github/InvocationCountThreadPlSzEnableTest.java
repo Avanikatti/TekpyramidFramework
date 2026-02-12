@@ -1,27 +1,25 @@
+package github;
 
 
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-import org.testng.internal.BaseClassFinder;
 
-import utility.BaseClass;
+public class InvocationCountThreadPlSzEnableTest {
 
-public class BaseClassImplentationTest extends BaseClass{
-	@Test
+	@Test(invocationCount = 5)
 	public void createAccount()
 	{
 		Reporter.log("creating account", true);
 	}
-	@Test
+	@Test(invocationCount = 5,threadPoolSize = 5)
 	public void updateAccount()
 	{
 		Reporter.log("updating account", true);
 	}
-	@Test
+	@Test(enabled=false)
 	public void deleteAccount()
 	{
 		Reporter.log("deleting account", true);
 	}
-	
 }
