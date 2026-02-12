@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>TekPyramidComCastCRMGUIFrameWork</groupId>
-  <artifactId>TekPyramidComCastCRMGUIFrameWork</artifactId>
+  <groupId>GitHubFramework</groupId>
+  <artifactId>GitHubFramework</artifactId>
   <version>0.0.1-SNAPSHOT</version>
    <dependencies>
   <!-- Source: https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -53,41 +53,4 @@
     <scope>compile</scope>
 </dependency>
   </dependencies>
-  
-  <profiles>
-  <profile>
-  <id>BT</id>
-  <build>
-  <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.5.4</version>
-        <configuration>
-          <suiteXmlFiles>
-            <suiteXmlFile>BatchExecution.xml</suiteXmlFile>
-          </suiteXmlFiles>
-        </configuration>
-      </plugin>
-</plugins>
-  </build>
-  </profile>
-  <profile>
-  <id>PT</id>
-  <build>
-  <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.5.4</version>
-        <configuration>
-          <suiteXmlFiles>
-            <suiteXmlFile>ParallelExecution.xml</suiteXmlFile>
-          </suiteXmlFiles>
-        </configuration>
-      </plugin>
-</plugins>
-  </build>
-  </profile>
-  </profiles>
 </project>

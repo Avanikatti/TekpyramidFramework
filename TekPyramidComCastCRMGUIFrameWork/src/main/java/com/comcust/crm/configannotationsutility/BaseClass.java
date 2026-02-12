@@ -14,8 +14,6 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Parameters;
-
 import com.comcust.crm.generic.ObjectrepositoryUtility.Homepage;
 import com.comcust.crm.generic.ObjectrepositoryUtility.LoginPage;
 import com.comcust.crm.generic.WebDriverUtility.JavaUtility;
@@ -48,7 +46,9 @@ public class BaseClass {
 	public void beforeClass() throws IOException
 	{
 		//String BROWSER=browser;//for Cross Browser purpose only
-		String BROWSER = plib.togetDataFromPropertiesFile("browser");
+		//String BROWSER = plib.togetDataFromPropertiesFile("browser");
+	//instead of reading data from property file getting data from command prompt(if you forgot to give data from commandpromt then take data from property file)
+		String BROWSER=System.getProperty("browser",plib.togetDataFromPropertiesFile("browser"));
 		//launching browser
 		if(BROWSER.equals("chrome"))
 		{
@@ -80,9 +80,13 @@ public class BaseClass {
 	@BeforeMethod(alwaysRun = true)
 	public void beforeMethod() throws IOException
 	{
-		String URL = plib.togetDataFromPropertiesFile("url");
+		/**String URL = plib.togetDataFromPropertiesFile("url");
 		String USERNAME=plib.togetDataFromPropertiesFile("username");
-		String PASSWORD=plib.togetDataFromPropertiesFile("password");
+		String PASSWORD=plib.togetDataFromPropertiesFile("password");**/
+		
+		String URL =System.getProperty("url", plib.togetDataFromPropertiesFile("url"));
+		String USERNAME=System.getProperty("username", plib.togetDataFromPropertiesFile("username"));
+		String PASSWORD=System.getProperty("password", plib.togetDataFromPropertiesFile("password"));
 		wlib.toWaitPagetoLoad(driver,20 );
 		LoginPage lp=new LoginPage(driver);
 		lp.loginToApp(URL, USERNAME, PASSWORD);
